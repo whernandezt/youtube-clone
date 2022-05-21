@@ -1,6 +1,8 @@
 :root {
   --dark-gray: rgb(96, 96, 96);
-  --ligth-gray: #ddd;
+  --light-gray: #ddd;
+  --just-white: white;
+  --title-color: rgba(3, 3, 3);
 }
 
 * {
@@ -15,6 +17,13 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+hr {
+  height: 1px;
+  background-color: var(--light-gray);
+  border: none;
 }
 
 /* Header */
@@ -58,7 +67,7 @@ body {
   padding: 0;
   height: 35px;
   border: 1px solid;
-  color: var(--ligth-gray);
+  color: var(--light-gray);
 }
 
 .header__search input {
@@ -75,4 +84,115 @@ body {
   height: 100%;
   border: none;
   border-radius: 0;
+}
+
+/* main body */
+.main-body {
+  display: flex;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: var(--just-white);
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar__categories {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.sidebar__category {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+.sidebar__category span {
+  margin-left: 15px;
+}
+
+.sidebar__category:hover {
+  background-color: var(--light-gray);
+  cursor: pointer;
+}
+
+/* videos section */
+.videos {
+  width: 100%;
+  height: 100%;
+  padding: 15px 25px;
+  border-top: 1px solid var(--light-gray);
+  background-color: #f9f9f9;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+}
+
+.video {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  width: 310px;
+}
+
+.video__details {
+  display: flex;
+  margin-top: 10px;
+}
+
+.video__thumbnail {
+  width: 100%;
+  height: 170px;
+}
+
+.video__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author img {
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+.title h3 {
+  margin-bottom: 6px;
+  color: var(--title-color);
+  font-weight: 600;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.title a,
+span {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-decoration: none;
+  color: var(--dark-gray);
 }
